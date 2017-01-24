@@ -88,7 +88,7 @@ public class SceneController : MonoBehaviour
         equipedSpell = (Spells)Mathf.Clamp((int)equipedSpell, (int)Spells.Fire, (int)Spells.Light);
     }
 
-    static IEnumerator Wait(float seconds, Action callback)
+    public static IEnumerator Wait(float seconds, Action callback)
     {
         yield return new WaitForSeconds(seconds);
         callback();

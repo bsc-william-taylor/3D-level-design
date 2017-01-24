@@ -24,7 +24,7 @@ public class UiEvents : MonoBehaviour
         }
 
         // DEBUG CODE
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             QuestLog.SetActive(!QuestLog.activeSelf);
         }
