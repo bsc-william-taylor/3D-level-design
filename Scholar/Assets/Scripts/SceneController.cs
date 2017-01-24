@@ -6,7 +6,7 @@ using System;
 
 public class SceneController : MonoBehaviour
 {
-    public GameObject Spell;
+    public GameObject[] SpellObjects;
     public Sprite[] SpellIcons;
     public GameObject SpellViewer;
 
@@ -21,7 +21,6 @@ public class SceneController : MonoBehaviour
 
     void Start()
     {
-
     }
 
     void Update()
@@ -32,33 +31,57 @@ public class SceneController : MonoBehaviour
 
     private void UpdateCastSpell()
     {
-        if (Input.GetMouseButtonDown(0) && !Spell.activeSelf)
+        var spell = SpellObjects[(int)equipedSpell];
+
+        if (Input.GetMouseButtonDown(0))
         {
-            var system = Spell.GetComponent<ParticleSystem>();
-            system.Clear();
-            system.Play();
-
-            Spell.SetActive(true);
-
-            StartCoroutine(Wait(2, () =>
+            if (equipedSpell == Spells.Fire)
             {
-                Spell.SetActive(false);
-            }));
+                RaycastHit hit;
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out hit))
+                {
+                    var height = Math.Abs(hit.transform.lossyScale.y)/2.0f;
+                    var target = hit.transform.position;
+                    spell.transform.position = target;
+                    spell.transform.Translate(Vector3.up * height, Space.World);
+                }
+
+                StartCoroutine(Wait(2, () => spell.SetActive(false)));
+            }
+
+            if (equipedSpell == Spells.Heal)
+            {
+                StartCoroutine(Wait(4, () => spell.SetActive(false)));
+            }
+
+            var system = spell.GetComponent<ParticleSystem>();
+            system.Clear();
+          
+            if (!spell.activeSelf)
+            {
+                system.Play();
+            }
+
+            spell.SetActive(!spell.activeSelf);
         }
     }
 
     private void UpdateSpellViewer()
     {
+        var spell = SpellObjects[(int)equipedSpell];
         var spellImage = SpellViewer.GetComponent<Image>();
         spellImage.sprite = SpellIcons[(int)equipedSpell];
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            spell.SetActive(false);
             equipedSpell++;
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            spell.SetActive(false);
             equipedSpell--;
         }
 

@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UiEvents : MonoBehaviour
 {
+    public Texture2D CursorTexture;
     public GameObject QuestLog;
     public bool ExitOnEscape = true;
     public bool MenuOnEscape = false;
@@ -23,7 +24,7 @@ public class UiEvents : MonoBehaviour
         }
 
         // DEBUG CODE
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.L))
         {
             QuestLog.SetActive(!QuestLog.activeSelf);
         }
