@@ -1,14 +1,31 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class UiEvents : MonoBehaviour
 {
+    public GameObject QuestLog;
+    public bool ExitOnEscape = true;
+    public bool MenuOnEscape = false;
+
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            Application.Quit();
+            if (ExitOnEscape)
+            {
+                QuitApp();
+            }
+
+            if (MenuOnEscape)
+            {
+                SceneManager.LoadScene("Menu");
+            }
+        }
+
+        // DEBUG CODE
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            QuestLog.SetActive(!QuestLog.activeSelf);
         }
     }
 
