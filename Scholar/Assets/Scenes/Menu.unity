@@ -297,11 +297,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22475992, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 22475992, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 57
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 22475992, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_AnchorMin.x
@@ -337,15 +337,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22475992, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22475992, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22475992, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11489864, guid: b2ae5fb42e925ef4ba873c50261647fe, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -483,11 +483,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22409832, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 22409832, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 57
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 22409832, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_AnchorMin.x
@@ -515,15 +515,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22409832, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22409832, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22409832, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11463348, guid: 92f7625a07649b44e82ed3cd968df293, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -598,19 +598,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 13
+      value: 0.000053406
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 16
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 650
+      value: 1400
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 400
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchorMin.x
@@ -674,11 +674,74 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_LocalScale.x
-      value: 2.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22481766, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 22481766, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 22481766, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 30.999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.000046
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -176
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_Text
+      value: "You play as \u2018\u2019The Traveller\u201D a nameless entity that is
+        travelling across the Kingdom of Dalriada to its capital Kilcreggan. In your
+        possession is the \u2018Tome\u2019 a scripture filled with cryptic symbols
+        that effect the world once articulated. Your quest is to take the valuable
+        scripture to a safe haven where it can be studied for the better of the wider
+        kingdom. The questions that must be answered though are: can you master the
+        Tome\u2019s secrets in order to achieve your goals? Can you effectively wield
+        its power to protect you on your journey? \n\nThe player\u2019s experience
+        is dictated by the quest or level undertaken. In my level the player is due
+        to arrive at a camp site in the nearby area. The player upon arriving will
+        perform investigative work finding clues at the site to find out what happened.
+        Once all clues have been revealed the player is supposed to successfully survey
+        the area revealing a group of monsters that have been killing travellers through
+        the area for a long time. The player will need to deploy their magic skills
+        to defeat said enemies, once they have they can acquire loot for the future
+        travels."
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 22481766, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.0001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
@@ -1052,15 +1115,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -60
+      value: -59.1
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_SizeDelta.x
-      value: 180
+      value: 270
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_SizeDelta.y
-      value: 57
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_AnchorMin.x
@@ -1116,15 +1179,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_LocalScale.z
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
