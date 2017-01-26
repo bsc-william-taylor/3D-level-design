@@ -208,7 +208,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -349,7 +349,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1931274483}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8440311, g: 0.85294116, b: 0.20696366, a: 1}
+  m_Color: {r: 1, g: 0.85490197, b: 0.20784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -827,7 +827,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 22438532, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -939,11 +939,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 30.999996
+      value: 0.0000038147
       objectReference: {fileID: 0}
     - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 6.000046
+      value: 6.0001
       objectReference: {fileID: 0}
     - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_SizeDelta.y
@@ -958,15 +958,9 @@ Prefab:
         scripture to a safe haven where it can be studied for the better of the wider
         kingdom. The questions that must be answered though are: can you master the
         Tome\u2019s secrets in order to achieve your goals? Can you effectively wield
-        its power to protect you on your journey? \n\nThe player\u2019s experience
-        is dictated by the quest or level undertaken. In my level the player is due
-        to arrive at a camp site in the nearby area. The player upon arriving will
-        perform investigative work finding clues at the site to find out what happened.
-        Once all clues have been revealed the player is supposed to successfully survey
-        the area revealing a group of monsters that have been killing travellers through
-        the area for a long time. The player will need to deploy their magic skills
-        to defeat said enemies, once they have they can acquire loot for the future
-        travels."
+        its power to protect you on your journey? \n\nControls\n\nWASD - Movement\nRight
+        Mouse - Activate Object\nLeft Mouse - Cast Spell\nQ & E - Switch Spell\nSpacebar
+        - Jump\nShift - Run\n\n"
       objectReference: {fileID: 0}
     - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_FontData.m_Alignment
@@ -999,11 +993,39 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22401530, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -34
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 22401530, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -34
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_Color.g
+      value: 0.85490197
+      objectReference: {fileID: 0}
+    - target: {fileID: 11432412, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_Color.b
+      value: 0.20784314
+      objectReference: {fileID: 0}
+    - target: {fileID: 22401530, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -85
+      objectReference: {fileID: 0}
+    - target: {fileID: 22401530, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22481766, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426984, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22471018, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9131f060837a4e00b998c53c5c1f5e1, type: 2}
@@ -1249,7 +1271,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22452640, guid: 220094434739a8a41a4ba41bd0acd6d0, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2462,8 +2484,8 @@ RectTransform:
   - {fileID: 202545827}
   - {fileID: 1360369511}
   - {fileID: 364940891}
-  - {fileID: 296991581}
   - {fileID: 181871314}
+  - {fileID: 296991581}
   - {fileID: 448208243}
   - {fileID: 951583210}
   - {fileID: 143812933}

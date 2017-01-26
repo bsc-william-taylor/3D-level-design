@@ -49,6 +49,6 @@ public class UiEvents : MonoBehaviour
 
     public void Showcase()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Showcase");
     }
 }
