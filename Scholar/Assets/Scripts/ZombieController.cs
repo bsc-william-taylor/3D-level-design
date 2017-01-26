@@ -7,7 +7,6 @@ public class ZombieController : MonoBehaviour
     public float MoveSpeed = 0.5f;
     public GameObject Player;
 
-
     private bool move = true;
     private bool dead = false;
     private Vector3 direction = Vector3.zero;
@@ -17,7 +16,6 @@ public class ZombieController : MonoBehaviour
     {
         animations = GetComponent<Animator>();
         GetComponent<Rigidbody>().freezeRotation = true;
-
         MoveSpeed += Random.Range(0.00f, 0.25f);
     }
 
@@ -25,7 +23,7 @@ public class ZombieController : MonoBehaviour
     {
         if (dead)
             return;
-        
+
         var body = GetComponent<Rigidbody>();
         var distance = Vector3.Distance(body.position, Player.transform.position);
 

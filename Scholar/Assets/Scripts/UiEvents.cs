@@ -22,11 +22,13 @@ public class UiEvents : MonoBehaviour
                 SceneManager.LoadScene("Menu");
             }
         }
-
-        // DEBUG CODE
-        if (Input.GetKeyDown(KeyCode.L))
+        
+        if (SceneManager.GetActiveScene().name != "Menu")
         {
-            QuestLog.SetActive(!QuestLog.activeSelf);
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                QuestLog.SetActive(!QuestLog.activeSelf);
+            }
         }
     }
 
@@ -36,6 +38,16 @@ public class UiEvents : MonoBehaviour
     }
 
     public void StartGame()
+    {
+        SceneManager.LoadScene("Level");
+    }
+
+    public void GoToRepo()
+    {
+        System.Diagnostics.Process.Start(@"https://github.com/wt-student-projects/3D-level-design");
+    }
+
+    public void Showcase()
     {
         SceneManager.LoadScene("Level");
     }

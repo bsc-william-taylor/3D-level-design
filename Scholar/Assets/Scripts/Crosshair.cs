@@ -2,25 +2,22 @@
 
 public class Crosshair : MonoBehaviour
 {
-    public float size = 5.0f;
-    public Texture crosshairTexture;
+    public float Size = 5.0f;
+    public Texture Texture;
 
-    private Rect crosshairSurface;
+    private Rect surface;
 
     void Start()
     {
-        var crosshairLength = Screen.width * size / 100.0f;
+        var crosshairLength = Screen.width * Size / 100.0f;
+        var x = Screen.width/2.0f - crosshairLength/2.0f;
+        var y = Screen.height/2.0f - crosshairLength/2.0f;
 
-        crosshairSurface = new Rect(
-            Screen.width / 2.0f - crosshairLength / 2.0f,
-            Screen.height / 2.0f - crosshairLength / 2.0f,
-            crosshairLength,
-            crosshairLength);
-
+        surface = new Rect(x, y, crosshairLength, crosshairLength);
     }
 
     void OnGUI()
     {
-        GUI.DrawTexture(crosshairSurface, crosshairTexture);
+        GUI.DrawTexture(surface, Texture);
     }
 }

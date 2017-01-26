@@ -12,16 +12,12 @@ public class SceneController : MonoBehaviour
 
     enum Spells
     {
-        Fire, 
-        Heal, 
+        Fire,
+        Heal,
         Light
     }
 
     private Spells equipedSpell = Spells.Fire;
-
-    void Start()
-    {
-    }
 
     void Update()
     {
@@ -41,7 +37,7 @@ public class SceneController : MonoBehaviour
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out hit))
                 {
-                    var height = Math.Abs(hit.transform.lossyScale.y)/2.0f;
+                    var height = Math.Abs(hit.transform.lossyScale.y) / 2.0f;
                     var target = hit.transform.position;
                     spell.transform.position = target;
                     spell.transform.Translate(Vector3.up * height, Space.World);
@@ -57,7 +53,7 @@ public class SceneController : MonoBehaviour
 
             var system = spell.GetComponent<ParticleSystem>();
             system.Clear();
-          
+
             if (!spell.activeSelf)
             {
                 system.Play();
