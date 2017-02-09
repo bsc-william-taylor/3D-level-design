@@ -1,4 +1,15 @@
 
+# Reference Areas
+
+* Loot 
+* Enemies
+* AI
+* Lighting
+* Backgorund Music
+* Fight Music
+
+
+
 # TODOS
 
 Justify decisions in the report rather than just describe.
