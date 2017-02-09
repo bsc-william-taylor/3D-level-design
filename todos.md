@@ -1,14 +1,6 @@
 
 # Reference Areas
 
-* Loot 
-* Enemies
-* AI
-* Lighting
-* Backgorund Music
-* Fight Music
-
-
 
 # TODOS
 
