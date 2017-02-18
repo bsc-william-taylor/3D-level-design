@@ -32,7 +32,10 @@ public class ZombieController : MonoBehaviour
 
         if (move)
         {
-            transform.LookAt(Player.transform.position);
+            var targetPosition = Player.transform.position;
+            targetPosition.y = transform.position.y;
+            transform.LookAt(targetPosition);
+
             body.position = Vector3.MoveTowards(body.position, Player.transform.position, MoveSpeed * Time.deltaTime);
         }
 
