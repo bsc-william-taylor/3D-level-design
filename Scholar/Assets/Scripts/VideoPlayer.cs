@@ -6,7 +6,7 @@ using System;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(AudioSource))]
-public class VideoPlayer : MonoBehaviour, IPointerClickHandler
+public class VideoPlayer : MonoBehaviour
 {
     public bool PlayOnLoad = false;
     public MovieTexture movTexture;
@@ -59,11 +59,6 @@ public class VideoPlayer : MonoBehaviour, IPointerClickHandler
         movTexture.Stop();
 
         SceneManager.LoadScene(1);
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        Stop();
     }
 
     public void Stop()
