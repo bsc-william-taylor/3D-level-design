@@ -39,7 +39,7 @@ public class UiEvents : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Level");
+        SceneManager.LoadScene("Quest");
     }
 
     public void GoToRepo()
