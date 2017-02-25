@@ -2888,7 +2888,7 @@ Prefab:
     - target: {fileID: 224925324710853322, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -9.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224925324710853322, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
@@ -2898,7 +2898,7 @@ Prefab:
     - target: {fileID: 224925324710853322, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 19.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224400271081057010, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
@@ -2913,7 +2913,7 @@ Prefab:
     - target: {fileID: 224400271081057010, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -19.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224400271081057010, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
@@ -2923,7 +2923,7 @@ Prefab:
     - target: {fileID: 224400271081057010, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 19.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114659216096449832, guid: fcae38f4826366a4597698ff3c9cb62c,
         type: 2}
@@ -3408,7 +3408,7 @@ Prefab:
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: blurType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
@@ -3423,7 +3423,7 @@ Prefab:
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: focalLength
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
@@ -3438,7 +3438,7 @@ Prefab:
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: aperture
-      value: 0.596
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4463326186730140, guid: a7113008419e96f46b82036898af4e07, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3457,6 +3457,31 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277906866526558, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: movementSettings.RunMultiplier
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277906866526558, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: movementSettings.JumpForce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 20454598046519726, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20454598046519726, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: field of view
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 114521516828107944, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: blurAmount
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7113008419e96f46b82036898af4e07, type: 2}
