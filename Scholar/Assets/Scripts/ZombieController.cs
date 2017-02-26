@@ -26,7 +26,7 @@ public class ZombieController : MonoBehaviour
         if (dead)
             return;
 
-        if(ForceAttack) 
+        if (ForceAttack)
         {
             animations.Play("attack");
             return;
@@ -46,11 +46,15 @@ public class ZombieController : MonoBehaviour
 
         if (move)
         {
-            var targetPosition = Player.transform.position;
-            targetPosition.y = transform.position.y;
-            transform.LookAt(targetPosition);
+            if (Vector3.Distance(Player.transform.position, body.position) <= 50.0f)
+            {
+                var targetPosition = Player.transform.position;
+                targetPosition.y = transform.position.y;
+                transform.LookAt(targetPosition);
 
-            body.position = Vector3.MoveTowards(body.position, Player.transform.position, MoveSpeed * Time.deltaTime);
+                body.position = Vector3.MoveTowards(body.position, Player.transform.position, MoveSpeed * Time.deltaTime);
+                Debug.Log("Moving towards player");
+            }
         }
 
         if (distance <= 3.0)
