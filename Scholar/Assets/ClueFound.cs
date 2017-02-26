@@ -4,19 +4,14 @@ using UnityEngine;
 
 public class ClueFound : MonoBehaviour
 {
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    private static int CluesFound = 0;
 
     void OnMouseDown()
     {
-        Debug.Log("Found");
+        CluesFound++;
+        Debug.Log("Found: " + CluesFound);
     }
 
-    // Update is called once per frame
     void Update()
     {
 
