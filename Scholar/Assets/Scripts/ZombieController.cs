@@ -53,7 +53,6 @@ public class ZombieController : MonoBehaviour
                 transform.LookAt(targetPosition);
 
                 body.position = Vector3.MoveTowards(body.position, Player.transform.position, MoveSpeed * Time.deltaTime);
-                Debug.Log("Moving towards player");
             }
         }
 

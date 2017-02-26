@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
-    private string s = @"
-        Here is one description
-    ";
 
     public struct StageInfo
     {
@@ -25,6 +22,7 @@ public class StateController : MonoBehaviour
         KillEnemies   
     };
 
+    public static bool StopUpdating = false;
     public Stages CurrentStage = Stages.FindCampsite;
 
     public GameObject Player;
@@ -34,18 +32,18 @@ public class StateController : MonoBehaviour
     private Dictionary<Stages, StageInfo> stageState;
     private Dictionary<Stages, string> questLogs = new Dictionary<Stages, string>()
     {
-        { Stages.FindCampsite,  "HelloWorld1" },
-        { Stages.FindClues,     "HelloWorld2" },
-        { Stages.FindEnemies,   "HelloWorld3"  },
-        { Stages.KillEnemies,   "HelloWorld4"  }
+        { Stages.FindCampsite,  "It is getting dark... I should follow this road to find a safe place sleep..." },
+        { Stages.FindClues,     "No one is here? Something is wrong, I should invistigate..." },
+        { Stages.FindEnemies,   "Something has been killing enemies who use this campsite, I should find them!"  },
+        { Stages.KillEnemies,   "I have found the creatures who are numerous, they must be eliminated."  }
     };
 
     private Dictionary<Stages, string> objectives = new Dictionary<Stages, string>() 
     {
-        { Stages.FindCampsite,  "Find Campsite" },
+        { Stages.FindCampsite,  "Reach the Campsite" },
         { Stages.FindClues,     "Find Clues"    },
-        { Stages.FindEnemies,   "Find Enemies"  },
-        { Stages.KillEnemies,   "Kill Enemies"  }
+        { Stages.FindEnemies,   "Find The Culprits"  },
+        { Stages.KillEnemies,   "Kill The Monsters"  }
     };
 
     void Start()
@@ -71,6 +69,11 @@ public class StateController : MonoBehaviour
 
     void Update()
     {
+        if(StopUpdating)
+        {
+            return;
+        }
+
         var text = LevelBar.GetComponent<Text>();
         text.text = stageState[CurrentStage].objective;
 
@@ -88,11 +91,12 @@ public class StateController : MonoBehaviour
         QuestLog.GetComponentsInChildren<Text>()[0].text = stageState[CurrentStage].questlog;
     }
 
-    private void FreezeCamera(bool freeze)
+    public static void FreezeCamera(bool freeze)
     {
+        var player = GameObject.Find("Player");
         var contraints = RigidbodyConstraints.FreezeAll;
-        var rigidbody = Player.GetComponent<Rigidbody>();
-        Player.GetComponent<RigidbodyFirstPersonController>().enabled = !freeze;
+        var rigidbody = player.GetComponent<Rigidbody>();
+        player.GetComponent<RigidbodyFirstPersonController>().enabled = !freeze;
         rigidbody.constraints = freeze ? contraints : RigidbodyConstraints.FreezeRotation;
     }
 }
