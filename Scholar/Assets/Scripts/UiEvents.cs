@@ -10,7 +10,7 @@ public class UiEvents : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             if (ExitOnEscape)
             {
