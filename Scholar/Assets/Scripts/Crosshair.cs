@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Crosshair : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class Crosshair : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.DrawTexture(surface, Texture);
+        var player = GameObject.Find("Player");
+        var controller = player.GetComponent<RigidbodyFirstPersonController>();
+
+        if(controller.enabled)
+        {
+            GUI.DrawTexture(surface, Texture);
+        }
     }
 }

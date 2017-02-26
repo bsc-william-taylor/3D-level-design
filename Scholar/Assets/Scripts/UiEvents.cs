@@ -22,14 +22,6 @@ public class UiEvents : MonoBehaviour
                 SceneManager.LoadScene("Menu");
             }
         }
-        
-        if (SceneManager.GetActiveScene().name != "Menu")
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-            {
-                QuestLog.SetActive(!QuestLog.activeSelf);
-            }
-        }
     }
 
     public void QuitApp()
