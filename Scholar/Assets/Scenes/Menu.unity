@@ -2814,7 +2814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CursorTexture: {fileID: 0}
   QuestLog: {fileID: 0}
-  ExitOnEscape: 1
+  ExitOnEscape: 0
   MenuOnEscape: 0
 --- !u!4 &2113785405 stripped
 Transform:

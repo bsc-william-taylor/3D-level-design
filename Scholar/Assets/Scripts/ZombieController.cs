@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ZombieController : MonoBehaviour
 {
+    public bool ForceAttack = false;
+    public bool ForceWalk = false;
     public float MoveSpeed = 0.5f;
     public GameObject Player;
 
@@ -23,6 +25,18 @@ public class ZombieController : MonoBehaviour
     {
         if (dead)
             return;
+
+        if(ForceAttack) 
+        {
+            animations.Play("attack");
+            return;
+        }
+
+        if (ForceWalk)
+        {
+            animations.Play("walk");
+            return;
+        }
 
         var body = GetComponent<Rigidbody>();
         var distance = Vector3.Distance(body.position, Player.transform.position);
