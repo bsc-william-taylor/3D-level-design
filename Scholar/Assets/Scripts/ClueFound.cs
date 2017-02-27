@@ -14,9 +14,9 @@ public class ClueFound : MonoBehaviour
     private static Dictionary<string, string> FoundClues = new Dictionary<string, string>();
     private Dictionary<string, string> Plots = new Dictionary<string, string>()
     {
-        { "Sword", "Here is a sword" },
-        { "Tent", "Here is a tent" },
-        { "Bonfire", "Here is a bonfire" }
+        { "Sword", "This sword has been used to fight a creature... has the campsite been attacked?" },
+        { "Tent", "There is no one in any of the tents... were they taken by something?" },
+        { "Bonfire", "This has been lit recently, wherever they are they havent gone far..." }
     };
 
     void OnMouseOver()
