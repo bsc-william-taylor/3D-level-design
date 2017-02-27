@@ -2,31 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using Assets.Scripts;
 
 public class ClueFound : MonoBehaviour
 {
     public StateController Controller;
     public GameObject QuestLog;
 
+    private const int MaxClues = 3;
+    private bool openedQuestLog = false;
+    private static Dictionary<string, string> FoundClues = new Dictionary<string, string>();
     private Dictionary<string, string> Plots = new Dictionary<string, string>()
     {
         { "Sword", "Here is a sword" },
         { "Tent", "Here is a tent" },
         { "Bonfire", "Here is a bonfire" }
     };
-    private const int MaxClues = 3;
-    private static int CluesFound = 0;
-    private bool openedQuestLog;
-
+    
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            if (!openedQuestLog && CluesFound != MaxClues)
+            if (!FoundClues.ContainsKey(gameObject.name) && !openedQuestLog && FoundClues.Keys.Count != MaxClues)
             {
                 DisplayPlotDevelopment(gameObject.name);
-                CluesFound++;
+                FoundClues[gameObject.name] = string.Empty;
             }
+        }
+
+        if (ActionService.Text == string.Empty && !FoundClues.ContainsKey(gameObject.name))
+        {
+            ActionService.Text = "Discover Clue";
+        }
+    }
+
+    void OnMouseExit()
+    {
+        if (ActionService.Text == "Discover Clue")
+        {
+            ActionService.Text = string.Empty;
         }
     }
 
@@ -39,10 +53,12 @@ public class ClueFound : MonoBehaviour
             StateController.FreezeCamera(false);
             openedQuestLog = false;
 
-            if(CluesFound == MaxClues)
+            ActionService.Text = string.Empty;
+
+            if (FoundClues.Keys.Count == MaxClues)
             {
                 Controller.NextSection();
-                CluesFound = int.MaxValue;
+                FoundClues.Add("", "");
             }
         }
     }
