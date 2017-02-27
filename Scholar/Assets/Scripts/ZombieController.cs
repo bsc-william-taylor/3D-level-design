@@ -23,6 +23,7 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
+        dead = true;
         if (dead)
             return;
 

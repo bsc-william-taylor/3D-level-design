@@ -29,6 +29,7 @@ public class StateController : MonoBehaviour
     public GameObject QuestLog;
     public GameObject LevelBar;
 
+    private bool ignoreKeyboard = false;
     private Dictionary<Stages, StageInfo> stageState;
     private Dictionary<Stages, string> questLogs = new Dictionary<Stages, string>()
     {
@@ -64,6 +65,7 @@ public class StateController : MonoBehaviour
 
     public void NextSection()
     {
+        ignoreKeyboard = true;
         ++CurrentStage;
     }
 
@@ -77,7 +79,7 @@ public class StateController : MonoBehaviour
         var text = LevelBar.GetComponent<Text>();
         text.text = stageState[CurrentStage].objective;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && !ignoreKeyboard)
         {
             var state = stageState[CurrentStage];
             state.read = true;
@@ -89,6 +91,7 @@ public class StateController : MonoBehaviour
         FreezeCamera(show);
         QuestLog.SetActive(show);
         QuestLog.GetComponentsInChildren<Text>()[0].text = stageState[CurrentStage].questlog;
+        ignoreKeyboard = false;
     }
 
     public static void FreezeCamera(bool freeze)
