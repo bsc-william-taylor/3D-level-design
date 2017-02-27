@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.UI;
 using UnityEngine;
 
 public class StateController : MonoBehaviour
 {
-
     public struct StageInfo
     {
         public string objective;
@@ -33,10 +31,10 @@ public class StateController : MonoBehaviour
     private Dictionary<Stages, StageInfo> stageState;
     private Dictionary<Stages, string> questLogs = new Dictionary<Stages, string>()
     {
-        { Stages.FindCampsite,  "It is getting dark... I should follow this road to find a safe place sleep..." },
-        { Stages.FindClues,     "No one is here? Something is wrong, I should invistigate..." },
-        { Stages.FindEnemies,   "Something has been killing enemies who use this campsite, I should find them!"  },
-        { Stages.KillEnemies,   "I have found the creatures who are numerous, they must be eliminated."  }
+        { Stages.FindCampsite,  "It is getting dark... There is a campsite down this road, I should rest there and continue my trip tomorrow." },
+        { Stages.FindClues,     "No one is here? Something is seriously wrong, I should invistigate to find out what happened..." },
+        { Stages.FindEnemies,   "Something has been killing travellers who use this campsite, I should find them!, Maybe that dirt path near the logs will lead me to them..."  },
+        { Stages.KillEnemies,   "I have found the creatures who are numerous, they must be killed so travellers can once again move freely through this area."  }
     };
 
     private Dictionary<Stages, string> objectives = new Dictionary<Stages, string>()
