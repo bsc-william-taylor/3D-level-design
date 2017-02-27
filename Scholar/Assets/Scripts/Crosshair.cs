@@ -11,8 +11,8 @@ public class Crosshair : MonoBehaviour
     void Start()
     {
         var crosshairLength = Screen.width * Size / 100.0f;
-        var x = Screen.width/2.0f - crosshairLength/2.0f;
-        var y = Screen.height/2.0f - crosshairLength/2.0f;
+        var x = Screen.width / 2.0f - crosshairLength / 2.0f;
+        var y = Screen.height / 2.0f - crosshairLength / 2.0f;
 
         surface = new Rect(x, y, crosshairLength, crosshairLength);
     }
@@ -22,7 +22,7 @@ public class Crosshair : MonoBehaviour
         var player = GameObject.Find("Player");
         var controller = player.GetComponent<RigidbodyFirstPersonController>();
 
-        if(controller.enabled)
+        if (controller.enabled)
         {
             GUI.DrawTexture(surface, Texture);
         }

@@ -18,7 +18,7 @@ public class ClueFound : MonoBehaviour
         { "Tent", "Here is a tent" },
         { "Bonfire", "Here is a bonfire" }
     };
-    
+
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(1))
@@ -46,7 +46,7 @@ public class ClueFound : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Return) && openedQuestLog)
+        if (Input.GetKeyDown(KeyCode.Return) && openedQuestLog)
         {
             QuestLog.SetActive(false);
             StateController.StopUpdating = false;
@@ -70,7 +70,7 @@ public class ClueFound : MonoBehaviour
 
         QuestLog.SetActive(true);
         QuestLog.GetComponentsInChildren<Text>()[0].text = Plots[id];
-        
+
         openedQuestLog = true;
     }
 }

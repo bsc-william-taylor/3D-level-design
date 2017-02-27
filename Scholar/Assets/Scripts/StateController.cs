@@ -14,12 +14,12 @@ public class StateController : MonoBehaviour
         public bool read;
     }
 
-    public enum Stages 
+    public enum Stages
     {
         FindCampsite,
         FindClues,
         FindEnemies,
-        KillEnemies   
+        KillEnemies
     };
 
     public static bool StopUpdating = false;
@@ -39,7 +39,7 @@ public class StateController : MonoBehaviour
         { Stages.KillEnemies,   "I have found the creatures who are numerous, they must be eliminated."  }
     };
 
-    private Dictionary<Stages, string> objectives = new Dictionary<Stages, string>() 
+    private Dictionary<Stages, string> objectives = new Dictionary<Stages, string>()
     {
         { Stages.FindCampsite,  "Reach the Campsite" },
         { Stages.FindClues,     "Find Clues"    },
@@ -55,10 +55,10 @@ public class StateController : MonoBehaviour
         for (Stages i = Stages.FindCampsite; i <= Stages.KillEnemies; i++)
         {
             stageState[i] = new StageInfo
-            { 
-                objective = objectives[i], 
+            {
+                objective = objectives[i],
                 questlog = questLogs[i],
-                read = false 
+                read = false
             };
         }
     }
@@ -71,7 +71,7 @@ public class StateController : MonoBehaviour
 
     void Update()
     {
-        if(StopUpdating)
+        if (StopUpdating)
         {
             return;
         }
