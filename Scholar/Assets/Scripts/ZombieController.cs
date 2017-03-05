@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using User = Player;
 
 public class ZombieController : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class ZombieController : MonoBehaviour
             animations.Play("attack");
             move = false;
 
-            StartCoroutine(SceneController.Wait(2.0f, () => move = true));
+            StartCoroutine(User.Wait(2.0f, () => move = true));
         }
 
         if (Input.GetKeyDown(KeyCode.K))

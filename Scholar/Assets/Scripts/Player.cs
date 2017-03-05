@@ -1,28 +1,66 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using System;
 
-public class SceneController : MonoBehaviour
+public class Player : MonoBehaviour
 {
+    public enum Spells { Fire, Heal, Light }
     public GameObject[] SpellObjects;
-    public Sprite[] SpellIcons;
     public GameObject SpellViewer;
-
-    enum Spells
-    {
-        Fire,
-        Heal,
-        Light
-    }
+    public Sprite[] SpellIcons;
 
     private Spells equipedSpell = Spells.Fire;
+    private Image healthbar;
+    private Image magicbar;
+
+    void Start()
+    {
+        healthbar = GameObject.Find("HealthBar").GetComponent<Image>();
+        magicbar = GameObject.Find("MagicBar").GetComponent<Image>();
+    }
 
     void Update()
     {
         UpdateSpellViewer();
         UpdateCastSpell();
+        AddMagica(1);
+    }
+
+    public int GetHealth()
+    {
+        return (int)(healthbar.fillAmount * 100.0f);
+    }
+
+    public int GetMagic()
+    {
+        return (int)(magicbar.fillAmount * 100.0f);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        healthbar.fillAmount -= (damage / 100.0f);
+    }
+
+    public void AddHealth(int health)
+    {
+        healthbar.fillAmount += (health / 100.0f);
+    }
+
+    public void UseMagica(int magic)
+    {
+        magicbar.fillAmount -= (magic / 100.0f);
+    }
+
+    public void AddMagica(int magic) 
+    {
+        magicbar.fillAmount += (magic / 100.0f);
+    }
+
+    public static IEnumerator Wait(float seconds, Action callback)
+    {
+        yield return new WaitForSeconds(seconds);
+        callback();
     }
 
     private void UpdateCastSpell()
@@ -31,7 +69,9 @@ public class SceneController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (equipedSpell == Spells.Fire)
+            var system = spell.GetComponent<ParticleSystem>();
+
+            if (equipedSpell == Spells.Fire && GetMagic() >= 10)
             {
                 RaycastHit hit;
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -44,14 +84,26 @@ public class SceneController : MonoBehaviour
                 }
 
                 StartCoroutine(Wait(2, () => spell.SetActive(false)));
+                UseMagica(10);
             }
-
-            if (equipedSpell == Spells.Heal)
+            else if (equipedSpell == Spells.Heal && GetMagic() >= 50)
             {
                 StartCoroutine(Wait(4, () => spell.SetActive(false)));
+                UseMagica(50);
+                AddHealth(50);
+            }
+            else if (equipedSpell == Spells.Light && GetMagic() >= 50)
+            {
+                if (!spell.activeSelf)
+                {
+                    UseMagica(50);
+                }
+            }
+            else 
+            {
+                return;
             }
 
-            var system = spell.GetComponent<ParticleSystem>();
             system.Clear();
 
             if (!spell.activeSelf)
@@ -60,6 +112,7 @@ public class SceneController : MonoBehaviour
             }
 
             spell.SetActive(!spell.activeSelf);
+
         }
     }
 
@@ -82,11 +135,5 @@ public class SceneController : MonoBehaviour
         }
 
         equipedSpell = (Spells)Mathf.Clamp((int)equipedSpell, (int)Spells.Fire, (int)Spells.Light);
-    }
-
-    public static IEnumerator Wait(float seconds, Action callback)
-    {
-        yield return new WaitForSeconds(seconds);
-        callback();
     }
 }
