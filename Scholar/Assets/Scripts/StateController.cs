@@ -28,6 +28,7 @@ public class StateController : MonoBehaviour
     public GameObject LevelBar;
 
     private bool ignoreKeyboard = false;
+    private bool playAlert = true;
     private Dictionary<Stages, StageInfo> stageState;
     private Dictionary<Stages, string> questLogs = new Dictionary<Stages, string>()
     {
@@ -64,6 +65,7 @@ public class StateController : MonoBehaviour
     public void NextSection()
     {
         ignoreKeyboard = true;
+        playAlert = true;
         ++CurrentStage;
 
         if(CurrentStage == Stages.KillEnemies)
@@ -97,6 +99,12 @@ public class StateController : MonoBehaviour
         QuestLog.SetActive(show);
         QuestLog.GetComponentsInChildren<Text>()[0].text = stageState[CurrentStage].questlog;
         ignoreKeyboard = false;
+
+        if (playAlert)
+        {
+            QuestLog.GetComponent<AudioSource>().Play();
+            playAlert = false;
+        }
     }
 
     public static void FreezeCamera(bool freeze)
