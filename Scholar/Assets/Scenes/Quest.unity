@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 107268769}
   - component: {fileID: 107268770}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: BackgroundMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -459,13 +459,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 94af722d2ae756d4ebd8b98bdb4c6903, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.21
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 154
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2802,6 +2802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageController: {fileID: 255475393}
+  BattleMusic: {fileID: 8300000, guid: be784e6c14b031d4cb1188ea6e63cc78, type: 3}
 --- !u!1 &1162633271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4226,6 +4227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StageController: {fileID: 255475393}
+  BattleMusic: {fileID: 8300000, guid: be784e6c14b031d4cb1188ea6e63cc78, type: 3}
 --- !u!23 &1705325572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4934,6 +4936,11 @@ Prefab:
         type: 2}
       propertyPath: blurAmount
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277906866526558, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: movementSettings.ForwardSpeed
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7113008419e96f46b82036898af4e07, type: 2}
