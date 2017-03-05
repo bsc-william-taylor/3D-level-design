@@ -15,29 +15,29 @@ public class ZombieController : MonoBehaviour
     private bool dead = false;
     private Vector3 direction = Vector3.zero;
     private Animator animations;
-    private Rigidbody rigidbody;
 
     void Start()
     {
         animations = GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.freezeRotation = true;
-
-        StartCoroutine(User.Wait(5.0f, () =>
-        {
-            rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-        }));
-
         MoveSpeed += Random.Range(0.00f, 0.25f);
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
     }
 
     void Update()
     {
-        if (dead || StateController.CurrentStage != StateController.Stages.KillEnemies)
-        {
+        if (dead)
+        { 
             return;
         }
-            
+
+        var body = GetComponent<Rigidbody>();
+        var distance = Vector3.Distance(body.position, Player.transform.position);
+        
+        body.constraints = RigidbodyConstraints.FreezeRotation;
 
         if (ForceAttack)
         {
@@ -48,12 +48,10 @@ public class ZombieController : MonoBehaviour
         if (ForceWalk)
         {
             animations.Play("walk");
-
             return;
         }
 
-        var body = GetComponent<Rigidbody>();
-        var distance = Vector3.Distance(body.position, Player.transform.position);
+       
 
         direction = Player.transform.position - body.position;
         direction.Normalize();

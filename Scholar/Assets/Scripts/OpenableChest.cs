@@ -6,10 +6,16 @@ using Random = UnityEngine.Random;
 
 public class OpenableChest : MonoBehaviour
 {
+    private AudioSource SoundEffect;
     public int LootLowerBound;
     public int LootUpperBound;
 
     private bool lootTaken = false;
+
+    void Start()
+    {
+        SoundEffect = GetComponent<AudioSource>();
+    }
 
     void OnMouseOver()
     {
@@ -38,6 +44,7 @@ public class OpenableChest : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && lookingAt && transform == hit.transform)
         {
+            SoundEffect.Play();
             lootTaken = true;
 
             var text = GameObject.Find("Gold").GetComponent<Text>();

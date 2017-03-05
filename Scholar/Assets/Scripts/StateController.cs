@@ -22,8 +22,8 @@ public class StateController : MonoBehaviour
 
     public static bool StopUpdating = false;
     public Stages CurrentStage { get; set; }
+    public ZombieController[] Enemies;
 
-    public GameObject Player;
     public GameObject QuestLog;
     public GameObject LevelBar;
 
@@ -48,7 +48,6 @@ public class StateController : MonoBehaviour
     void Start()
     {
         CurrentStage = Stages.FindCampsite;
-        Player = GameObject.Find("Player");
         stageState = new Dictionary<Stages, StageInfo>();
 
         for (Stages i = Stages.FindCampsite; i <= Stages.KillEnemies; i++)
@@ -66,6 +65,13 @@ public class StateController : MonoBehaviour
     {
         ignoreKeyboard = true;
         ++CurrentStage;
+
+        if(CurrentStage == Stages.KillEnemies)
+        {
+            foreach(var zombie in Enemies) {
+                zombie.Show();
+            }
+        }
     }
 
     void Update()
