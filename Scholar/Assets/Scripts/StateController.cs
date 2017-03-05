@@ -21,7 +21,7 @@ public class StateController : MonoBehaviour
     };
 
     public static bool StopUpdating = false;
-    public Stages CurrentStage = Stages.FindCampsite;
+    public Stages CurrentStage { get; set; }
 
     public GameObject Player;
     public GameObject QuestLog;
@@ -47,6 +47,7 @@ public class StateController : MonoBehaviour
 
     void Start()
     {
+        CurrentStage = Stages.FindCampsite;
         Player = GameObject.Find("Player");
         stageState = new Dictionary<Stages, StageInfo>();
 

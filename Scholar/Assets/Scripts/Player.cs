@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
                     var height = Math.Abs(hit.transform.lossyScale.y) / 2.0f;
                     var target = hit.transform.position;
                     spell.transform.position = target;
-                    spell.transform.Translate(Vector3.up * height, Space.World);
+                    spell.transform.Translate(Vector3.up * height * 2, Space.World);
                 }
 
                 StartCoroutine(Wait(2, () => spell.SetActive(false)));
