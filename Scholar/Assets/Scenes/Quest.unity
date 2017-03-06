@@ -7816,7 +7816,7 @@ Prefab:
     - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: m_Intensity
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
@@ -7913,17 +7913,17 @@ Prefab:
     - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.89705884
       objectReference: {fileID: 0}
     - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: m_Color.g
-      value: 0.4951318
+      value: 0.67904836
       objectReference: {fileID: 0}
     - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: m_Color.b
-      value: 0.03676468
+      value: 0.02638411
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7113008419e96f46b82036898af4e07, type: 2}
