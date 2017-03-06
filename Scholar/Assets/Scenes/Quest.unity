@@ -648,40 +648,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4463326186730140, guid: a7113008419e96f46b82036898af4e07,
     type: 2}
   m_PrefabInternal: {fileID: 1890564223}
---- !u!20 &105250130
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 105250127}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!114 &105250132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,8 +815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178, y: -467.3}
-  m_SizeDelta: {x: 1505, y: 93}
+  m_AnchoredPosition: {x: -682, y: -467.3}
+  m_SizeDelta: {x: 497, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159852045
 MonoBehaviour:
@@ -7850,12 +7816,12 @@ Prefab:
     - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: m_Intensity
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: blurType
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114259990487910920, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
@@ -7923,7 +7889,7 @@ Prefab:
     - target: {fileID: 20454598046519726, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: field of view
-      value: 65
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 114521516828107944, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
@@ -7944,10 +7910,20 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 20454598046519726, guid: a7113008419e96f46b82036898af4e07,
+    - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
-      propertyPath: m_HDR
+      propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.4951318
+      objectReference: {fileID: 0}
+    - target: {fileID: 108503598478289236, guid: a7113008419e96f46b82036898af4e07,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.03676468
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7113008419e96f46b82036898af4e07, type: 2}
@@ -7963,7 +7939,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1890564224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fceaeb339b971b429c4cc600acabd13, type: 3}
   m_Name: 
