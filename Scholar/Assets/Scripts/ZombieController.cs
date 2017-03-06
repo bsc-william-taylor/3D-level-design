@@ -49,14 +49,6 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if (dead || Player.IsDead())
-        {
-            return;
-        }
-
-        var body = GetComponent<Rigidbody>();
-        var distance = Vector3.Distance(body.position, Player.transform.position);
-
         if (ForceAttack)
         {
             animations.Play("attack");
@@ -68,6 +60,16 @@ public class ZombieController : MonoBehaviour
             animations.Play("walk");
             return;
         }
+
+        if (dead || Player == null || Player.IsDead())
+        {
+            return;
+        }
+
+        var body = GetComponent<Rigidbody>();
+        var distance = Vector3.Distance(body.position, Player.transform.position);
+
+        
 
         direction = Player.transform.position - body.position;
         direction.Normalize();
