@@ -30,11 +30,11 @@ public class Crosshair : MonoBehaviour
         {
             var overEnemy = false;
 
-            if(Physics.Raycast(ray, out hit) && hit.collider.gameObject.name == "Zombie")
+            if (Physics.Raycast(ray, out hit) && hit.collider.gameObject.name == "Zombie")
             {
                 var zombie = hit.collider.gameObject.GetComponent<ZombieController>();
-                
-                if(zombie != null && !zombie.IsDead())
+
+                if (zombie != null && !zombie.IsDead())
                 {
                     overEnemy = true;
                 }
@@ -44,5 +44,5 @@ public class Crosshair : MonoBehaviour
         }
     }
 
-    
+
 }
