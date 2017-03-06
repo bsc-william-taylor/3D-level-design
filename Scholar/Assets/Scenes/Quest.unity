@@ -7874,7 +7874,7 @@ Prefab:
     - target: {fileID: 114277906866526558, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
       propertyPath: movementSettings.RunMultiplier
-      value: 1.25
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 114277906866526558, guid: a7113008419e96f46b82036898af4e07,
         type: 2}
