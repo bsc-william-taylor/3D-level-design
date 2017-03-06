@@ -17,7 +17,8 @@ public class StateController : MonoBehaviour
         FindCampsite,
         FindClues,
         FindEnemies,
-        KillEnemies
+        KillEnemies,
+        Finished
     };
 
     public static bool StopUpdating = false;
@@ -43,7 +44,8 @@ public class StateController : MonoBehaviour
         { Stages.FindCampsite,  "Reach the Campsite" },
         { Stages.FindClues,     "Find Clues"    },
         { Stages.FindEnemies,   "Find The Culprits"  },
-        { Stages.KillEnemies,   "Kill The Monsters"  }
+        { Stages.KillEnemies,   "Kill The Monsters"  },
+        { Stages.Finished,      "Get The Loot"  }
     };
 
     void Start()
@@ -70,7 +72,8 @@ public class StateController : MonoBehaviour
 
         if(CurrentStage == Stages.KillEnemies)
         {
-            foreach(var zombie in Enemies) {
+            foreach(var zombie in Enemies) 
+            {
                 zombie.Show();
             }
         }

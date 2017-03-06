@@ -70,6 +70,7 @@ public class ClueFound : MonoBehaviour
 
         QuestLog.SetActive(true);
         QuestLog.GetComponentsInChildren<Text>()[0].text = Plots[id];
+        QuestLog.GetComponent<AudioSource>().Play();
 
         openedQuestLog = true;
     }

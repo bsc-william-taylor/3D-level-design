@@ -27,6 +27,11 @@ public class ZombieController : MonoBehaviour
         gameObject.SetActive(true);
     }
 
+    public bool IsDead()
+    {
+        return dead;
+    }
+
     void Update()
     {
         if (dead)
