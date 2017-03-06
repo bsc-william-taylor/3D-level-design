@@ -53,7 +53,7 @@ public class StateController : MonoBehaviour
 
     void Start()
     {
-        CurrentStage = Stages.FindEnemies;
+        CurrentStage = Stages.FindCampsite;
         stageState = new Dictionary<Stages, StageInfo>();
 
         for (Stages i = Stages.FindCampsite; i <= Stages.Finished; i++)
