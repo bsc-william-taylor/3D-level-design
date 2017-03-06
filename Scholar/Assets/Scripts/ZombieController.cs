@@ -8,6 +8,7 @@ public class ZombieController : MonoBehaviour
     public bool ForceAttack = false;
     public bool ForceWalk = false;
     public float MoveSpeed = 0.5f;
+    public int Health;
     public Player Player;
     public StateController StateController;
 
@@ -22,8 +23,22 @@ public class ZombieController : MonoBehaviour
         MoveSpeed += Random.Range(0.00f, 0.25f);
     }
 
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+
+        if (Health <= 0)
+        {
+            animations.Play("fall");
+            move = false;
+            dead = true;
+        }
+    }
+
     public void Show()
     {
+        var body = GetComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.FreezeRotation;
         gameObject.SetActive(true);
     }
 
@@ -34,15 +49,13 @@ public class ZombieController : MonoBehaviour
 
     void Update()
     {
-        if (dead)
-        { 
+        if (dead || Player.IsDead())
+        {
             return;
         }
 
         var body = GetComponent<Rigidbody>();
         var distance = Vector3.Distance(body.position, Player.transform.position);
-        
-        body.constraints = RigidbodyConstraints.FreezeRotation;
 
         if (ForceAttack)
         {

@@ -10,7 +10,7 @@ public class NextStage : MonoBehaviour
     private bool changedMusic = false;
 
     void OnCollisionEnter(Collision col)
-    {   
+    {
         if (col.gameObject.name == "Player")
         {
             gameObject.SetActive(false);

@@ -75,14 +75,14 @@ public class StateController : MonoBehaviour
             audioSource.clip = NormalMusic;
             audioSource.Play();
         }
-        
+
         ignoreKeyboard = true;
         playAlert = true;
         ++CurrentStage;
 
-        if(CurrentStage == Stages.KillEnemies)
+        if (CurrentStage == Stages.KillEnemies)
         {
-            foreach(var zombie in Enemies) 
+            foreach (var zombie in Enemies)
             {
                 zombie.Show();
             }
@@ -127,7 +127,7 @@ public class StateController : MonoBehaviour
                 enemiesKilled += zombie.IsDead() ? 1 : 0;
             }
 
-            if(enemiesKilled == Enemies.Length)
+            if (enemiesKilled == Enemies.Length)
             {
                 NextSection();
             }

@@ -10,6 +10,8 @@ public class OpenableChest : MonoBehaviour
     private AudioSource SoundEffect;
     public int LootLowerBound;
     public int LootUpperBound;
+
+    public string FinalChestMessage;
     public bool FinalChest;
 
     private bool lootTaken = false;
@@ -56,9 +58,10 @@ public class OpenableChest : MonoBehaviour
 
             ActionService.PostAction(this, currentGold + " Gold Found", 3);
 
-            if(FinalChest)
+            if (FinalChest)
             {
-                StartCoroutine(Player.Wait(5.0f, () => SceneManager.LoadScene("Menu")));
+                StartCoroutine(Player.Wait(3.0f, () => ActionService.PostAction(this, FinalChestMessage, 7)));
+                StartCoroutine(Player.Wait(10.0f, () => SceneManager.LoadScene("Menu")));
             }
         }
     }
