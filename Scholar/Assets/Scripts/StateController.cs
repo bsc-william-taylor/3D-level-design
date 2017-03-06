@@ -32,6 +32,7 @@ public class StateController : MonoBehaviour
 
     private bool ignoreKeyboard = false;
     private bool playAlert = true;
+    private bool block = false;
     private Dictionary<Stages, StageInfo> stageState;
     private Dictionary<Stages, string> questLogs = new Dictionary<Stages, string>()
     {
@@ -119,7 +120,7 @@ public class StateController : MonoBehaviour
             playAlert = false;
         }
 
-        if (CurrentStage == Stages.KillEnemies)
+        if (CurrentStage == Stages.KillEnemies && !block)
         {
             var enemiesKilled = 0;
             foreach (var zombie in Enemies)
@@ -129,7 +130,8 @@ public class StateController : MonoBehaviour
 
             if (enemiesKilled == Enemies.Length)
             {
-                NextSection();
+                StartCoroutine(Player.Wait(3.0f, () => NextSection()));
+                block = true;
             }
         }
     }

@@ -14,7 +14,7 @@ public class Footsteps : MonoBehaviour
     void Update()
     {
 
-        source.pitch = Input.GetKey(KeyCode.LeftShift) ? 1.4f : 1.0f;
+        source.pitch = Input.GetKey(KeyCode.LeftShift) ? 1.6f : 1.0f;
 
         if (Input.GetButtonDown("Horizontal") || Input.GetButtonDown("Vertical"))
         {
