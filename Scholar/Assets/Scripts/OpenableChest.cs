@@ -52,11 +52,12 @@ public class OpenableChest : MonoBehaviour
             lootTaken = true;
 
             var text = GameObject.Find("Gold").GetComponent<Text>();
+            var randomGold = Random.Range(LootLowerBound, LootUpperBound);
             var currentGold = Convert.ToInt32(text.text);
-            currentGold += Random.Range(LootLowerBound, LootUpperBound);
+            currentGold += randomGold;
             text.text = currentGold.ToString();
 
-            ActionService.PostAction(this, currentGold + " Gold Found", 3);
+            ActionService.PostAction(this, randomGold + " Gold Found", 3);
 
             if (FinalChest)
             {
