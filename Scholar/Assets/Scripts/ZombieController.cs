@@ -56,8 +56,6 @@ public class ZombieController : MonoBehaviour
             return;
         }
 
-       
-
         direction = Player.transform.position - body.position;
         direction.Normalize();
 

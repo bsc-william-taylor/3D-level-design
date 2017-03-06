@@ -2,6 +2,7 @@
 using UnityStandardAssets.Characters.FirstPerson;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StateController : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class StateController : MonoBehaviour
 
     public GameObject QuestLog;
     public GameObject LevelBar;
+    public AudioClip NormalMusic;
 
     private bool ignoreKeyboard = false;
     private bool playAlert = true;
@@ -36,7 +38,8 @@ public class StateController : MonoBehaviour
         { Stages.FindCampsite,  "It is getting dark... There is a campsite down this road, I should rest there and continue my trip tomorrow." },
         { Stages.FindClues,     "No one is here? Something is seriously wrong, I should invistigate to find out what happened..." },
         { Stages.FindEnemies,   "Something has been killing travellers who use this campsite, I should find them!, Maybe that dirt path near the logs will lead me to them..."  },
-        { Stages.KillEnemies,   "I have found the creatures who are numerous, they must be killed so travellers can once again move freely through this area."  }
+        { Stages.KillEnemies,   "I have found the creatures who are numerous, they must be killed so travellers can once again move freely through this area."  },
+        { Stages.Finished,   "The zombies have been killed, and the campfire will be safe. I can take the loot from the travellers and continue on my journey"  }
     };
 
     private Dictionary<Stages, string> objectives = new Dictionary<Stages, string>()
@@ -53,7 +56,7 @@ public class StateController : MonoBehaviour
         CurrentStage = Stages.FindCampsite;
         stageState = new Dictionary<Stages, StageInfo>();
 
-        for (Stages i = Stages.FindCampsite; i <= Stages.KillEnemies; i++)
+        for (Stages i = Stages.FindCampsite; i <= Stages.Finished; i++)
         {
             stageState[i] = new StageInfo
             {
@@ -66,6 +69,13 @@ public class StateController : MonoBehaviour
 
     public void NextSection()
     {
+        if (CurrentStage == Stages.KillEnemies)
+        {
+            var audioSource = GameObject.Find("BackgroundMusic").GetComponent<AudioSource>();
+            audioSource.clip = NormalMusic;
+            audioSource.Play();
+        }
+        
         ignoreKeyboard = true;
         playAlert = true;
         ++CurrentStage;
@@ -107,6 +117,20 @@ public class StateController : MonoBehaviour
         {
             QuestLog.GetComponent<AudioSource>().Play();
             playAlert = false;
+        }
+
+        if (CurrentStage == Stages.KillEnemies)
+        {
+            var enemiesKilled = 0;
+            foreach (var zombie in Enemies)
+            {
+                enemiesKilled += zombie.IsDead() ? 1 : 0;
+            }
+
+            if(enemiesKilled == Enemies.Length)
+            {
+                NextSection();
+            }
         }
     }
 
