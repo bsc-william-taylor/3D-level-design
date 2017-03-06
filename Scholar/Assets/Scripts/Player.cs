@@ -28,11 +28,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TakeDamage(25);
-        }
-
         if (!IsDead())
         {
             UpdateSpellViewer();
@@ -42,10 +37,13 @@ public class Player : MonoBehaviour
         {
             controller.enabled = false;
 
-            if (transform.eulerAngles.x < 90.0f)
+            if (transform.eulerAngles.x != 360.0f - 90.0f)
             {
-                transform.Rotate(new Vector3(90.0f, 0.0f, 0.0f));
-                ActionService.PostAction(this, "You Dead", 5);
+                transform.Rotate(new Vector3(-18.0f, 0.0f, 0.0f));
+            }
+            else
+            {
+                ActionService.PostAction(this, "You died... Thanks for playing the level!", 5);
                 StartCoroutine(Wait(5.0f, () => SceneManager.LoadScene("Menu")));
             }
         }

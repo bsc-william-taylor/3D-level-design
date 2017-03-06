@@ -69,8 +69,6 @@ public class ZombieController : MonoBehaviour
         var body = GetComponent<Rigidbody>();
         var distance = Vector3.Distance(body.position, Player.transform.position);
 
-        
-
         direction = Player.transform.position - body.position;
         direction.Normalize();
 
@@ -93,13 +91,6 @@ public class ZombieController : MonoBehaviour
             move = false;
 
             StartCoroutine(User.Wait(2.0f, () => move = true));
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            animations.Play("fall");
-            move = false;
-            dead = true;
         }
     }
 }
