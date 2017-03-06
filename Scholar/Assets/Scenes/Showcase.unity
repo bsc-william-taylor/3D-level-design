@@ -5712,7 +5712,7 @@ Transform:
   m_GameObject: {fileID: 431353218}
   m_LocalRotation: {x: -0, y: 0.34752396, z: -0, w: 0.9376712}
   m_LocalPosition: {x: 6.83, y: -3.85, z: 1.97}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1826194672}
   m_RootOrder: 1
@@ -5731,7 +5731,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3e8968646094e43edb8cfc8ce13955a8, type: 3}
@@ -9321,8 +9321,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1088963095}
   m_LocalRotation: {x: -0, y: -0.2996024, z: -0, w: 0.95406413}
-  m_LocalPosition: {x: -11.11, y: -2.66, z: 2.427734}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -12.17, y: -2.66, z: 1.69}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1826194672}
   m_RootOrder: 0
@@ -9341,7 +9341,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3e8968646094e43edb8cfc8ce13955a8, type: 3}
@@ -9481,8 +9481,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1163756427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8, y: -3.6, z: 4.3}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -1.51, y: -3.6, z: 5.31}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1826194672}
   m_RootOrder: 3
@@ -9501,7 +9501,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3e8968646094e43edb8cfc8ce13955a8, type: 3}
@@ -9806,7 +9806,7 @@ Transform:
   m_GameObject: {fileID: 1655400065}
   m_LocalRotation: {x: -0.0047189435, y: 0.35497707, z: 0.026825815, w: 0.93447816}
   m_LocalPosition: {x: 13.7, y: -2.2, z: 11.6}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1826194672}
   m_RootOrder: 2
@@ -9825,7 +9825,7 @@ TextMesh:
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3e8968646094e43edb8cfc8ce13955a8, type: 3}
