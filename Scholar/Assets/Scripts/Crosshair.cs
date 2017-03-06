@@ -4,6 +4,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Crosshair : MonoBehaviour
 {
     public float Size = 5.0f;
+    public Texture EnemyTexture;
     public Texture Texture;
 
     private Rect surface;
@@ -19,12 +20,29 @@ public class Crosshair : MonoBehaviour
 
     void OnGUI()
     {
+        RaycastHit hit;
+
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         var player = GameObject.Find("Player");
         var controller = player.GetComponent<RigidbodyFirstPersonController>();
 
         if (controller.enabled)
         {
-            GUI.DrawTexture(surface, Texture);
+            var overEnemy = false;
+
+            if(Physics.Raycast(ray, out hit) && hit.collider.gameObject.name == "Zombie")
+            {
+                var zombie = hit.collider.gameObject.GetComponent<ZombieController>();
+                
+                if(zombie != null && !zombie.IsDead())
+                {
+                    overEnemy = true;
+                }
+            }
+
+            GUI.DrawTexture(surface, overEnemy ? EnemyTexture : Texture);
         }
     }
+
+    
 }
