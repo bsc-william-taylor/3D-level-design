@@ -5,7 +5,7 @@
 
 # 3D Level Design 
 
-3D Level Design module taught unsurprisingly basic 3D level design concepts and game engine fundamentals. Students have the oppertunity to develop a 3D level in a popular engine such as Unreal 4 and Unity.
+3D Level Design module taught unsurprisingly basic 3D level design concepts and game engine fundamentals. Students had the oppertunity to develop a 3D level in a popular engine such as Unreal 4 and Unity along with a design report and user testing. Students were given complete creative freedom with regards to the level and was seen as a great oppertunity for students to develop a portfolio piece.
 
 ## Assignment
 
