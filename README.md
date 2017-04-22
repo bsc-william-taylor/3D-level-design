@@ -15,13 +15,6 @@ The assignment was in two parts. The first was to create a document setting out 
 
 An expansive level design document was submitted setting out the technology and basic game concepts in great detail with valid references. I built the level with the Unity game engine as it was one I had used previously. The 3D level comprised of advanced features such as animated models, custom 3D terrain, particle effects and immersive audio.
 
-## Features
-
-* Motion blur, depth of field and HDR
-* Advanced particle effects
-* Fully animated models
-* Immersive audio
-
 ## License
 
 Apache 2.0
